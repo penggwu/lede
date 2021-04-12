@@ -34,6 +34,7 @@ jobs:
           DEBIAN_FRONTEND: noninteractive
         run: |
           sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d
+          xcode-select —install 
           brew install asciidoc docbook gdbm libxml2 pbzip2 autoconf e2fsprogs gettext libxslt pkg-config bash-completion fastjar gnu-getopt libyaml readline binutils findutils gnu-tar lzlib sqlite bison flex gputils openssl wget coreutils gawk intltool ossp-uuid xz
           df -h
 

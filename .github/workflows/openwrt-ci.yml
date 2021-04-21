@@ -36,7 +36,7 @@ jobs:
           hdiutil create -size 50g -type SPARSE -fs "Case-sensitive HFS+" -volname OpenWrt OpenWrt.sparseimage
           hdiutil attach OpenWrt.sparseimage
           cp -r ./* /Volumes/OpenWrt
-          /Volumes/OpenWrt
+          cd /Volumes/OpenWrt
           pwd
           ls -al
 

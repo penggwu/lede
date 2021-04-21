@@ -35,10 +35,11 @@ jobs:
         run: |
           hdiutil create -size 50g -type SPARSE -fs "Case-sensitive HFS+" -volname OpenWrt OpenWrt.sparseimage
           hdiutil attach OpenWrt.sparseimage
+          cp -r ./* /Volumes/OpenWrt
+          /Volumes/OpenWrt
           pwd
-          cd /Volumes/OpenWrt
-          pwd
-          ls
+          ls -al
+
           sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d 
           brew install make gcc asciidoc docbook gdbm libxml2 pbzip2 autoconf e2fsprogs gettext libxslt pkg-config bash-completion fastjar gnu-getopt libyaml readline binutils findutils gnu-tar lzlib sqlite bison flex gputils openssl wget coreutils gawk intltool ossp-uuid xz
           df -h

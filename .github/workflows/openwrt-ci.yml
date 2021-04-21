@@ -42,28 +42,37 @@ jobs:
           cd lede
           pwd
           sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d 
-          brew install make
+          brew install make gcc grep libfido2 asciidoc docbook gdbm libxml2 pbzip2 autoconf e2fsprogs gettext libxslt pkg-config bash-completion fastjar gnu-getopt libyaml readline binutils findutils gnu-tar lzlib sqlite bison flex gputils openssl wget coreutils gawk intltool ossp-uuid xz
           make -v
           df -h
           
 
       - name: Update feeds
         run: |
+          cd /Volumes/OpenWrt/lede
           pwd
           sed -i '' 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
       - name: Generate configuration file
-        run: make defconfig
+        run: |
+          cd /Volumes/OpenWrt/lede
+          pwd
+          make -v
+          make defconfig
 
       - name: Make download
         run: |
+          cd /Volumes/OpenWrt/lede
+          pwd
           make download -j8
           find dl -size -1024c -exec rm -f {} \;
 
       - name: Compile firmware
         run: |
+          cd /Volumes/OpenWrt/lede
+          pwd
           make -j$(nproc) || make -j1 V=s
           echo "======================="
           echo "Space usage:"

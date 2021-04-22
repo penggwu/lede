@@ -42,7 +42,7 @@ jobs:
           cd lede
           pwd
           sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d 
-          brew install make gcc grep libfido2 asciidoc docbook gdbm libxml2 pbzip2 autoconf e2fsprogs gettext libxslt pkg-config bash-completion fastjar gnu-getopt libyaml readline binutils findutils gnu-tar lzlib sqlite bison flex gputils openssl wget coreutils gawk intltool ossp-uuid xz
+          brew install libelf make gcc grep libfido2 asciidoc docbook gdbm libxml2 pbzip2 autoconf e2fsprogs gettext libxslt pkg-config bash-completion fastjar gnu-getopt libyaml readline binutils findutils gnu-tar lzlib sqlite bison flex gputils openssl wget coreutils gawk intltool ossp-uuid xz
           make -v
           df -h
           

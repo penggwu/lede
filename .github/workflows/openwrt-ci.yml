@@ -59,6 +59,8 @@ jobs:
         run: |
           cd /Volumes/OpenWrt/lede
           pwd
+          cat ~/.bashrc
+          source ~/.bashrc
           make -v
           make defconfig
 
